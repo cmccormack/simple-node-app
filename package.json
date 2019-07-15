@@ -1,0 +1,29 @@
+{
+  "name": "simple-node-app",
+  "version": "1.0.0",
+  "description": "Simple Node Server",
+  "main": "server.js",
+  "scripts": {
+    "start:dev": "nodemon server.js",
+    "start": "node server.js"
+  },
+  "keywords": [
+    "Node",
+    "Server"
+  ],
+  "author": "Christopher McCormack",
+  "license": "UNLICENSED",
+  "dependencies": {
+    "body-parser": "^1.19.0",
+    "dotenv": "^8.0.0",
+    "express": "^4.17.1",
+    "pug": "^2.0.4"
+  },
+  "devDependencies": {
+    "eslint": "^6.0.1",
+    "eslint-config-prettier": "^6.0.0",
+    "eslint-plugin-prettier": "^3.1.0",
+    "nodemon": "^1.19.1",
+    "prettier": "^1.18.2"
+  }
+}

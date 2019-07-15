@@ -1,0 +1,10 @@
+{
+  "editor.formatOnSave": false,
+  "[javascript]": {
+    "editor.formatOnSave": true
+  },
+  "eslint.autoFixOnSave": true,
+  "cSpell.ignoreWords": [
+    "atcg"
+  ],
+}
