@@ -25,38 +25,7 @@ app.use(function(req, res, next) {
 // Use static server to handle static assets
 app.use(express.static(path.resolve(__dirname, "public")));
 
-app.post("/tm", (req, res, next) => {
-  // Validate primer is not empty string
-  if (!req.body["primer-input"]) {
-    res.send("Error: must include primer");
-  }
-
-  const primerValues = {
-    A: 2,
-    T: 2,
-    C: 4,
-    G: 4,
-  };
-
-  const { "primer-input": primer } = req.body;
-
-  const result = primer
-    .toUpperCase()
-    .split("")
-    .reduce((acc, base) => primerValues[base] + acc, 0);
-
-  res.json({ success: true, result });
-
-  // Render the pug template with appropriate data
-  // res.render("results", { result });
-});
-
-app.use((err, req, res, next) => {
-  res.json({
-    success: false,
-    error: err.message || err.msg || err,
-  });
-});
+require("./routes")(app);
 
 const server = app.listen(app.get("port"), err => {
   if (err) {

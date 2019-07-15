@@ -26,8 +26,12 @@ form.addEventListener("submit", e => {
     method,
   })
     .then(response => response.json())
-    .then(json => {
-      resultSpan.textContent = json.result;
+    .then(response => {
+      resultSpan.textContent = response.message;
+      resultWrapper.classList.remove("hidden");
+    })
+    .catch(err => {
+      resultSpan.textContent = err;
       resultWrapper.classList.remove("hidden");
     });
 });
