@@ -1,6 +1,7 @@
 const primerInput = document.getElementById("primer-input");
 const form = document.getElementById("primer-form");
 const resultSpan = document.getElementById("result");
+const resultWrapper = document.getElementById("result-wrapper");
 
 primerInput.addEventListener("input", e => {
   let newValue;
@@ -25,5 +26,8 @@ form.addEventListener("submit", e => {
     method,
   })
     .then(response => response.json())
-    .then(json => (resultSpan.textContent = json.result));
+    .then(json => {
+      resultSpan.textContent = json.result;
+      resultWrapper.classList.remove("hidden");
+    });
 });

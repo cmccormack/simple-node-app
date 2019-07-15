@@ -13,10 +13,24 @@ body {
   align-items: center;
 }
 
-.title {
+#title {
   margin: 3rem;
 }
 
 .form-input-row {
   display: flex;
+}
+
+.hidden {
+  display: none;
+}
+
+#result-wrapper {
+  text-align: center;
+}
+
+#result {
+  border: 1px solid black;
+  padding: .5rem 1rem;
+  background-color: lightblue;
 }

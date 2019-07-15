@@ -7,8 +7,8 @@ const app = express();
 app.set("port", process.env.PORT || 3000);
 
 // Use pug with template engine
-// app.set("view engine", "pug");
-// app.set("views", path.resolve(__dirname, "templates"));
+app.set("view engine", "pug");
+app.set("views", path.resolve(__dirname, "templates"));
 
 // Body parsing - parse application/x-www-form-urlencoded
 app.use(bodyParser.urlencoded({ extended: false }));
@@ -45,11 +45,7 @@ app.post("/tm", (req, res, next) => {
     .split("")
     .reduce((acc, base) => primerValues[base] + acc, 0);
 
-  res.type("json");
-  res.send({
-    success: true,
-    result,
-  });
+  res.json({ success: true, result });
 
   // Render the pug template with appropriate data
   // res.render("results", { result });
